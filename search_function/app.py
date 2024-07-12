@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import requests
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 load_dotenv()
 
@@ -9,6 +10,7 @@ load_dotenv()
 # initialize Flask application
 
 app = Flask(__name__) 
+CORS(app)
 
 # function takes an ingredient and optional health param
 # retrieves id & key  and builds URL for Edamam API request
